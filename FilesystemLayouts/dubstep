@@ -1,5 +1,7 @@
+#
+# GNUstep filesystem layout
+#
 # This is the GNUstep configuration file.
-
 # This is the "strict version 2 mode" version of the file, which is
 # identical to the normal one, but all the obsolete v1 variables
 # (GNUSTEP_SYSTEM_ROOT, GNUSTEP_LOCAL_ROOT, GNUSTEP_NETWORK_ROOT,
@@ -31,6 +33,10 @@
 
 # The paths should not include a '/' at the end.
 
+# By default, we install into /usr/GNUstep, but this can be overridden
+# by using ./configure --prefix=xxx when configuring.
+GNUSTEP_DEFAULT_PREFIX=/
+
 # The name of the user config file.  This file can override
 # some settings in this file.  Usually used by users that want
 # to install things into their GNUstep user domain and/or have
@@ -42,18 +48,15 @@ GNUSTEP_USER_CONFIG_FILE=Library/Preferences/GNUstep.conf
 # relative to the user home directory.
 GNUSTEP_USER_DEFAULTS_DIR=Library/Preferences
 
-
 # This is where the gnustep-make Makefiles are installed.
 # Traditionally, this is /usr/GNUstep/System/Library/Makefiles
 GNUSTEP_MAKEFILES=/Developer/Makefiles
-
 
 # This is where the user home directories are.  Only used to provide
 # NSUserDirectory in gnustep-base.  Never used anywhere else.
 GNUSTEP_SYSTEM_USERS_DIR=/Users
 GNUSTEP_NETWORK_USERS_DIR=/Network/Users
 GNUSTEP_LOCAL_USERS_DIR=/Users
-
 
 # This is where System GUI Applications get installed.
 # Traditionally it is /usr/GNUstep/System/Applications.
@@ -107,7 +110,6 @@ GNUSTEP_SYSTEM_DOC_MAN=/System/share/man
 # This is where System info pages get installed.
 # Traditionally it is /usr/GNUstep/System/Library/Documentation/info.
 GNUSTEP_SYSTEM_DOC_INFO=/System/share/info
-
 
 GNUSTEP_NETWORK_APPS=/Developer/Applications
 GNUSTEP_NETWORK_ADMIN_APPS=/Developer/Applications
